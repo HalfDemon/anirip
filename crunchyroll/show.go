@@ -4,8 +4,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/HalfDemon/anirip/anirip"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/sdwolfe32/anirip/anirip"
 )
 
 // Show contins show metadata and child seasons

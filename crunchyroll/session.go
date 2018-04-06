@@ -6,8 +6,8 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/HalfDemon/anirip/anirip"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/sdwolfe32/anirip/anirip"
 )
 
 // Login logs the user in to Crunchyroll and stores the session on the client

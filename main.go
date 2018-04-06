@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/sdwolfe32/anirip/anirip"
-	"github.com/sdwolfe32/anirip/crunchyroll"
 	"os"
+
+	"github.com/HalfDemon/anirip/anirip"
+	"github.com/HalfDemon/anirip/crunchyroll"
 )
 
 var (
@@ -127,13 +128,13 @@ func download(l *anirip.Logger, showURL, user, pass, quality, subLang string) {
 			// Moves the episode to the appropriate season sub-directory
 			if err := anirip.Copy(tempDir+string(os.PathSeparator)+"episode.mkv",
 				show.GetTitle()+string(os.PathSeparator)+seasonMap[season.GetNumber()]+
-					string(os.PathSeparator)+episode.GetFilename()+".mkv", 10); err != nil {
+					string(os.PathSeparator)+episode.GetFilename()+".mkv"); err != nil {
 				l.Error(err)
 			}
 			l.Success("Downloading and merging completed successfully!")
 
 			// Deletes old data from Temp Directory
-			if err := os.Remove(tempDir+string(os.PathSeparator)+"episode.mkv"); err != nil {
+			if err := os.Remove(tempDir + string(os.PathSeparator) + "episode.mkv"); err != nil {
 				l.Error(err)
 			}
 		}

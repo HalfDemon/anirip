@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/HalfDemon/anirip/anirip"
 	"github.com/PuerkitoBio/goquery"
-	"github.com/sdwolfe32/anirip/anirip"
 )
 
 var (
