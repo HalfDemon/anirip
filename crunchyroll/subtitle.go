@@ -20,10 +20,12 @@ import (
 	"github.com/HalfDemon/anirip/anirip"
 )
 
+// SubListResults 5
 type SubListResults struct {
 	Subtitles []Subtitle `xml:"subtitle"`
 }
 
+// Subtitle 5
 type Subtitle struct {
 	ID      int     `xml:"id,attr"`
 	Link    string  `xml:"link,attr"`
@@ -34,6 +36,7 @@ type Subtitle struct {
 	Data    string  `xml:"data"`
 }
 
+// SubtitleScript shush
 type SubtitleScript struct {
 	ID        int            `xml:"id,attr"`
 	Title     string         `xml:"title,attr"`
@@ -49,10 +52,12 @@ type SubtitleScript struct {
 	Events    []ScriptEvents `xml:"events"`
 }
 
+// ScriptStyles shush
 type ScriptStyles struct {
 	Styles []Style `xml:"style"`
 }
 
+// Style shush
 type Style struct {
 	ID             int    `xml:"id,attr"`
 	Name           string `xml:"name,attr"`
@@ -80,10 +85,12 @@ type Style struct {
 	Encoding       int    `xml:"encoding,attr"`
 }
 
+// ScriptEvents shush
 type ScriptEvents struct {
 	Events []Event `xml:"event"`
 }
 
+// Event shush
 type Event struct {
 	Event       []ScriptEvents `xml:"events"`
 	ID          int            `xml:"id,attr"`

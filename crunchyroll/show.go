@@ -1,7 +1,6 @@
 package crunchyroll
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -106,17 +105,17 @@ func (s *Show) Scrape(client *anirip.HTTPClient, showURL string) error {
 	return nil
 }
 
-// Gets the title of the show for referencing outside of this lib
-func (show *Show) GetTitle() string {
+// GetTitle Gets the title of the show for referencing outside of this lib
+func (s *Show) GetTitle() string {
 
-	return fmt.printf(format, anirip.CleanFilename(show.Title))
+	return s.Title
 }
 
-// Re-stores seasons belonging to the show and returns them for iteration
-func (show *Show) GetSeasons() anirip.Seasons {
+// GetSeasons Re-stores seasons belonging to the show and returns them for iteration
+func (s *Show) GetSeasons() anirip.Seasons {
 	seasons := []anirip.Season{}
-	for i := 0; i < len(show.Seasons); i++ {
-		seasons = append(seasons, &show.Seasons[i])
+	for i := 0; i < len(s.Seasons); i++ {
+		seasons = append(seasons, &s.Seasons[i])
 	}
 	return seasons
 }
