@@ -8,6 +8,16 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
+// Stripchars
+func stripchars(str, chr string) string {
+	return strings.Map(func(r rune) rune {
+		if strings.IndexRune(chr, r) < 0 {
+			return r
+		}
+		return -1
+	}, str)
+}
+
 // Show contins show metadata and child seasons
 type Show struct {
 	Title   string
@@ -97,7 +107,7 @@ func (s *Show) Scrape(client *anirip.HTTPClient, showURL string) error {
 
 // Gets the title of the show for referencing outside of this lib
 func (show *Show) GetTitle() string {
-	return show.Title
+	return stripchars(show.Title, ":")
 }
 
 // Re-stores seasons belonging to the show and returns them for iteration
