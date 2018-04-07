@@ -127,7 +127,7 @@ func (e *Episode) Download(vp anirip.VideoProcessor) error {
 
 // GetFilename returns the Episodes filename
 func (e *Episode) GetFilename() string {
-	return anirip.CleanFilename(e.Filename)
+	return e.Filename
 }
 
 // getMapping out what the format or resolution of the video should be based on
