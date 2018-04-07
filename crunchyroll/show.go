@@ -107,7 +107,7 @@ func (s *Show) Scrape(client *anirip.HTTPClient, showURL string) error {
 
 // GetTitle Gets the title of the show for referencing outside of this lib
 func (s *Show) GetTitle() string {
-
+	s.Title = anirip.CleanFilename(s.Title)
 	return s.Title
 }
 
