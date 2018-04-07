@@ -1,6 +1,7 @@
 package crunchyroll
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -107,7 +108,9 @@ func (s *Show) Scrape(client *anirip.HTTPClient, showURL string) error {
 
 // Gets the title of the show for referencing outside of this lib
 func (show *Show) GetTitle() string {
-	return stripchars(show.Title, ":")
+
+	h := fmt.Sprintf("a %s", "string")
+	return fmt.Println(h)
 }
 
 // Re-stores seasons belonging to the show and returns them for iteration
