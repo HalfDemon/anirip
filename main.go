@@ -98,6 +98,8 @@ func download(l *anirip.Logger, showURL, user, pass, quality, subLang string) {
 
 			// Downloads full MKV video from stream provider
 			l.Info("Downloading video...")
+			l.Info("Show Path", show.GetTitle)
+			l.Info("Episode Path", episode.GetFilename)
 			if err = episode.Download(vp); err != nil {
 				l.Error(err)
 				continue
