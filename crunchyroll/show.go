@@ -109,8 +109,7 @@ func (s *Show) Scrape(client *anirip.HTTPClient, showURL string) error {
 // Gets the title of the show for referencing outside of this lib
 func (show *Show) GetTitle() string {
 
-	h := fmt.Sprintf("a %s", "string")
-	return fmt.Println(h)
+	return anirip.CleanFilename(fmt.Sprintf("%s"))
 }
 
 // Re-stores seasons belonging to the show and returns them for iteration
